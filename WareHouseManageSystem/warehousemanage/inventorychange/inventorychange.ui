@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>InventoryChange</class>
+ <widget class="QWidget" name="InventoryChange">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>322</width>
+    <height>193</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QComboBox
+{
+background-color:white;
+}
+QPushButton:hover
+{
+background-color: rgb(180, 85, 100);
+color:white;
+}
+
+QPushButton:hover:pressed
+{
+background-color:rgb(180, 85, 100);
+color:white;
+}
+
+QPushButton
+{
+background-color:rgb(84, 115, 135);
+color:white;
+font-size:12px;
+width: 100px;
+border-radius:2px;
+spacing:2px;
+padding: 0px 0px;
+}</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <property name="topMargin">
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="QWidget" name="widgetControl" native="true">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>20</height>
+        </size>
+       </property>
+       <widget class="QPushButton" name="pushButtonSelect">
+        <property name="geometry">
+         <rect>
+          <x>399</x>
+          <y>15</y>
+          <width>70</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string> 查询</string>
+        </property>
+        <property name="icon">
+         <iconset resource="../../res.qrc">
+          <normaloff>:/image/image/查询.png</normaloff>:/image/image/查询.png</iconset>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButtonExport">
+        <property name="geometry">
+         <rect>
+          <x>475</x>
+          <y>15</y>
+          <width>69</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string> 导出</string>
+        </property>
+        <property name="icon">
+         <iconset resource="../../res.qrc">
+          <normaloff>:/image/image/export.png</normaloff>:/image/image/export.png</iconset>
+        </property>
+       </widget>
+       <widget class="QLabel" name="labelWshe">
+        <property name="geometry">
+         <rect>
+          <x>22</x>
+          <y>12</y>
+          <width>42</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string> 仓库：</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="comboBoxWareHouse">
+        <property name="geometry">
+         <rect>
+          <x>70</x>
+          <y>12</y>
+          <width>100</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>100</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>120</width>
+          <height>16777215</height>
+         </size>
+        </property>
+       </widget>
+       <widget class="QLabel" name="labelTime">
+        <property name="geometry">
+         <rect>
+          <x>98</x>
+          <y>12</y>
+          <width>72</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>  查询时间：</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="comboBoxTime">
+        <property name="geometry">
+         <rect>
+          <x>176</x>
+          <y>12</y>
+          <width>100</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>100</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>120</width>
+          <height>16777215</height>
+         </size>
+        </property>
+       </widget>
+       <widget class="QLabel" name="labelEnd">
+        <property name="geometry">
+         <rect>
+          <x>249</x>
+          <y>12</y>
+          <width>72</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>  结束日期：</string>
+        </property>
+       </widget>
+       <widget class="QDateEdit" name="dateEditEndTime">
+        <property name="geometry">
+         <rect>
+          <x>327</x>
+          <y>12</y>
+          <width>100</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>100</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>120</width>
+          <height>16777215</height>
+         </size>
+        </property>
+       </widget>
+       <widget class="QLabel" name="labelSelect">
+        <property name="geometry">
+         <rect>
+          <x>325</x>
+          <y>17</y>
+          <width>72</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>  查询条件：</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEditCondition">
+        <property name="geometry">
+         <rect>
+          <x>403</x>
+          <y>12</y>
+          <width>130</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>130</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>120</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="placeholderText">
+         <string>输入原料名称或条形码</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="labelStart">
+        <property name="geometry">
+         <rect>
+          <x>174</x>
+          <y>12</y>
+          <width>72</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>  开始日期：</string>
+        </property>
+       </widget>
+       <widget class="QDateEdit" name="dateEditStartTime">
+        <property name="geometry">
+         <rect>
+          <x>252</x>
+          <y>12</y>
+          <width>100</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>100</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>120</width>
+          <height>16777215</height>
+         </size>
+        </property>
+       </widget>
+      </widget>
+     </item>
+     <item>
+      <widget class="QTableWidget" name="tableWidgetData">
+       <column>
+        <property name="text">
+         <string>原料名称</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>条形码</string>
+        </property>
+       </column>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../../res.qrc"/>
+ </resources>
+ <connections/>
+</ui>

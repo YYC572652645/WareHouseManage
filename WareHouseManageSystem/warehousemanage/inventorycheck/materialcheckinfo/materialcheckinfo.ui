@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MaterialCheckInfo</class>
+ <widget class="QWidget" name="MaterialCheckInfo">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>617</width>
+    <height>512</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>40</width>
+       <height>25</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <spacer name="horizontalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>40</width>
+       <height>25</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <widget class="QTableWidget" name="tableWidgetData">
+     <column>
+      <property name="text">
+       <string>原料名称</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>条形码</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>单价</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>实际数量</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>盘存单位</string>
+      </property>
+     </column>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QPushButton" name="pushButtonAdd">
+       <property name="text">
+        <string> 添加原料</string>
+       </property>
+       <property name="icon">
+        <iconset resource="../../../res.qrc">
+         <normaloff>:/image/image/addfile.png</normaloff>:/image/image/addfile.png</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButtonSave">
+       <property name="text">
+        <string> 保存</string>
+       </property>
+       <property name="icon">
+        <iconset resource="../../../res.qrc">
+         <normaloff>:/image/image/确认.png</normaloff>:/image/image/确认.png</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButtonCancel">
+       <property name="text">
+        <string> 取消</string>
+       </property>
+       <property name="icon">
+        <iconset resource="../../../res.qrc">
+         <normaloff>:/image/image/cancel.png</normaloff>:/image/image/cancel.png</iconset>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../../../res.qrc"/>
+ </resources>
+ <connections/>
+</ui>

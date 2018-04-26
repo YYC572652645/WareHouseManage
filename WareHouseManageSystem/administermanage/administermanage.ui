@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AdministerManage</class>
+ <widget class="QWidget" name="AdministerManage">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>528</width>
+    <height>387</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QPushButton" name="pushButtonAdd">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton:hover
+{
+background-color: rgb(180, 85, 100);
+color:white;
+}
+
+QPushButton:hover:pressed
+{
+background-color:rgb(180, 85, 100);
+color:white;
+}
+
+QPushButton
+{
+background-color:rgb(84, 115, 135);
+color:white;
+font-size:12px;
+width: 150px;
+border-radius:2px;
+spacing:2px;
+padding: 0px 0px;
+}</string>
+         </property>
+         <property name="text">
+          <string>添加</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../res.qrc">
+           <normaloff>:/image/image/addfile.png</normaloff>:/image/image/addfile.png</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QTableWidget" name="tableWidgetData">
+       <property name="styleSheet">
+        <string notr="true">QPushButton:hover
+{
+font-weight:bold;
+}
+
+QPushButton:hover:pressed
+{
+font-weight:bold;
+}
+
+QPushButton
+{
+background-color:transparent;
+border-radius:2px;
+spacing:2px;
+padding: 0px 0px;
+max-width:70px;
+}</string>
+       </property>
+       <column>
+        <property name="text">
+         <string>管理员ID</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>管理员名称</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>描述</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>操作</string>
+        </property>
+       </column>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../res.qrc"/>
+ </resources>
+ <connections/>
+</ui>

@@ -1,0 +1,283 @@
+#include "materialstoinfo.h"
+#include "ui_materialstoinfo.h"
+#include "httpclient/httpkey.h"
+
+
+/*********************  构造函数        *********************/
+MaterialStoInfo::MaterialStoInfo(QWidget *parent) :
+    QWidget(parent),
+    ui(new Ui::materialstoinfo)
+{
+    ui->setupUi(this);
+    this->initControl();
+}
+
+/*********************  析构函数        *********************/
+MaterialStoInfo::~MaterialStoInfo()
+{
+    delete ui;
+}
+
+/*********************  显示窗口        *********************/
+void MaterialStoInfo::showWidget()
+{
+    this->show();
+}
+
+/*********************  设置控件数据        *********************/
+void MaterialStoInfo::setControlData()
+{
+    ui->comboBoxUnit->clear();
+    for(int i = 0; i < unitMapList.size(); i ++)
+    {
+        QString unitName = unitMapList.at(i).value(HTTPKEY::NAME);
+        ui->comboBoxUnit->addItem(unitName);
+
+        if(unitMapList.at(i).value(HTTPKEY::UNITID) == matMap.value(HTTPKEY::UNITID))
+        {
+            ui->comboBoxUnit->setCurrentText(unitName);
+            ui->labelUnitPrice->setText(tr("单价(元/%1)").arg(unitName));
+            ui->labelNumber->setText(tr("入库数量(%1)").arg(unitName));
+        }
+    }
+
+    for(int i = 0; i < widgetList.size(); i ++)
+    {
+        mainLayout->removeWidget(widgetList[i]);
+    }
+    widgetList.clear();
+    labelMainList.clear();
+    labelSideList.clear();
+    delButtonList.clear();
+
+    for(int i = 0; i < assistantMapList.size(); i ++)
+    {
+        this->createControl(i);
+    }
+
+
+    ui->lineEditBarCode->setText(matMap.value(HTTPKEY::BARCODE));
+    ui->lineEditWareHouse->setText(matMap.value(HTTPKEY::WAREHOUSENAME));
+    ui->lineEditMatName->setText(matMap.value(HTTPKEY::MATERIALNAME));
+    ui->spinBoxPrice->setValue(matMap.value(HTTPKEY::STORAGEPRICE).toInt());
+    ui->spinBoxNumber->setValue(matMap.value(HTTPKEY::STORAGEAMOUNT).toInt());
+    ui->lineEditTotalMoney->setText(matMap.value(HTTPKEY::TOTALMONEY));
+}
+
+/*********************  保存数据        *********************/
+void MaterialStoInfo::on_pushButtonSave_clicked()
+{
+    QByteArray byteArray;
+
+    QString strPost = POSTARG::UPDATEMAT.arg(matMap.value(HTTPKEY::PURCHASEMATERIALID));
+
+    strPost = strPost.arg(QString::number(ui->spinBoxPrice->value()), matMap.value(HTTPKEY::PURCHASEUNIT));
+
+    strPost = strPost.arg(QString::number(ui->spinBoxNumber->value()), ui->lineEditTotalMoney->text());
+
+    byteArray.append(strPost);
+
+    HTTPCLIENT->postUrlReq(MESSAGEURL(PROTOCOL::URL_STO_UPDATE_MAT), byteArray, PROTOCOL::URL_STO_UPDATE_MAT);
+
+    this->close();
+}
+
+/*********************  取消事件        *********************/
+void MaterialStoInfo::on_pushButtonCancel_clicked()
+{
+    this->close();
+}
+
+/*********************  初始化控件       *********************/
+void MaterialStoInfo::initControl()
+{
+    titleBar = new TitleBar(this);
+    mainWidget = new QWidget(this);
+    mainLayout = new QVBoxLayout(this);
+
+    titleBar->setTitle(GLOBALDEF::MATERIALINFO);
+    titleBar->setIcon(GLOBALDEF::APPLOGO);
+
+    titleBar->subButton(TITLEBAR::MAXMINWIDGET);
+    this->setWindowFlags(Qt::CoverWindow | Qt::FramelessWindowHint);
+
+    ui->dateEditTime->setCalendarPopup(true);
+    ui->comboBoxUnit->setFocusPolicy(Qt::NoFocus);
+    ui->comboBoxUnit->setView(new QListView());
+    ui->dateEditTime->setFocusPolicy(Qt::NoFocus);
+
+    ui->dateEditTime->setDate(QDate::currentDate());
+}
+
+/*********************  创建控件        *********************/
+void MaterialStoInfo::createControl(int index)
+{
+    if(index < 0 || index >= assistantMapList.size()) return;
+
+    if(index != 0)
+    {
+        QFrame *line = new QFrame(this);
+        line->setFrameShape(QFrame::HLine);
+        line->setFrameShadow(QFrame::Sunken);
+        line->raise();
+
+        QPalette palette = line->palette();
+        palette.setColor(QPalette::Dark, Qt::green);
+        line->setPalette(palette);
+
+        mainLayout->addWidget(line);
+    }
+
+    QLabel *labelMain = new QLabel(this);
+    labelMain->setText(tr("主入库仓库：  %1  ").arg(matMap.value(HTTPKEY::WAREHOUSENAME)));
+    labelMain->setAlignment(Qt::AlignCenter);
+    mainLayout->addWidget(labelMain);
+    widgetList.append(labelMain);
+    labelMain->setStyleSheet("QLabel{background-color:white;font-size:14px;font-weight:bold;}");
+
+    QHBoxLayout *hboxLayoutMainNumber = new QHBoxLayout(this);
+    QLabel *labelMainNumber = new QLabel(this);
+    QLineEdit *lineEditMainNumber = new QLineEdit(this);
+    QWidget *widgetMainNumber = new QWidget(this);
+
+    labelMainList.append(labelMainNumber);
+    labelMainNumber->setText("入库数量");
+    lineEditMainNumber->setFixedSize(150, 30);
+    lineEditMainNumber->setEnabled(false);
+    lineEditMainNumber->setText(matMap.value(HTTPKEY::STORAGEAMOUNT));
+    hboxLayoutMainNumber->addWidget(labelMainNumber);
+    hboxLayoutMainNumber->addWidget(lineEditMainNumber);
+    widgetMainNumber->setLayout(hboxLayoutMainNumber);
+    mainLayout->addWidget(widgetMainNumber);
+    widgetList.append(widgetMainNumber);
+
+    QHBoxLayout *hboxLayoutMainMoney = new QHBoxLayout(this);
+    QLabel *labelMainMoney = new QLabel(this);
+    QLineEdit *lineEditMainMoney = new QLineEdit(this);
+    QWidget *widgetMainMoney = new QWidget(this);
+
+    labelMainMoney->setText("金额(元)");
+    lineEditMainMoney->setFixedSize(150, 30);
+    lineEditMainMoney->setEnabled(false);
+    lineEditMainMoney->setText(matMap.value(HTTPKEY::TOTALMONEY));
+    hboxLayoutMainMoney->addWidget(labelMainMoney);
+    hboxLayoutMainMoney->addWidget(lineEditMainMoney);
+    widgetMainMoney->setLayout(hboxLayoutMainMoney);
+    mainLayout->addWidget(widgetMainMoney);
+    widgetList.append(widgetMainMoney);
+
+    QHBoxLayout *hboxLayoutSide = new QHBoxLayout(this);
+    QWidget *widgetSide = new QWidget(this);
+    QLabel *labelSide = new QLabel(this);
+    QPushButton *pushButtonDel = new QPushButton(this);
+    delButtonList.append(pushButtonDel);
+    pushButtonDel->setIcon(QIcon(":/image/image/删 除.png"));
+    pushButtonDel->setFixedSize(20,20);
+
+    labelSide->setText(tr("分仓入库仓库：  %1  ").arg(assistantMapList.at(index).value(HTTPKEY::WAREHOUSENAME)));
+    labelSide->setAlignment(Qt::AlignCenter);
+
+    hboxLayoutSide->addWidget(labelSide);
+    hboxLayoutSide->addWidget(pushButtonDel);
+    widgetSide->setLayout(hboxLayoutSide);
+    mainLayout->addWidget(widgetSide);
+    widgetList.append(widgetSide);
+    labelSide->setStyleSheet("QLabel{background-color:white;font-size:14px;font-weight:bold;}");
+
+    QHBoxLayout *hboxLayoutSideNumber = new QHBoxLayout(this);
+    QLabel *labelSideNumber = new QLabel(this);
+    QLineEdit *lineEditSideNumber = new QLineEdit(this);
+    QWidget *widgetSideNumber = new QWidget(this);
+
+    labelSideNumber->setText("入库数量");
+    labelSideList.append(labelSideNumber);
+    lineEditSideNumber->setFixedSize(150, 30);
+    lineEditSideNumber->setText(assistantMapList.at(index).value(HTTPKEY::NUMBER));
+    hboxLayoutSideNumber->addWidget(labelSideNumber);
+    hboxLayoutSideNumber->addWidget(lineEditSideNumber);
+    widgetSideNumber->setLayout(hboxLayoutSideNumber);
+    mainLayout->addWidget(widgetSideNumber);
+    widgetList.append(widgetSideNumber);
+
+    QHBoxLayout *hboxLayoutSideMoney = new QHBoxLayout(this);
+    QLabel *labelSideMoney = new QLabel(this);
+    QLineEdit *lineEditSideMoney = new QLineEdit(this);
+    QWidget *widgetSideMoney = new QWidget(this);
+
+    labelSideMoney->setText("金额(元)");
+    lineEditSideMoney->setFixedSize(150, 30);
+    lineEditSideMoney->setText(assistantMapList.at(index).value(HTTPKEY::TOTALMONEY));
+    lineEditSideMoney->setEnabled(false);
+    hboxLayoutSideMoney->addWidget(labelSideMoney);
+    hboxLayoutSideMoney->addWidget(lineEditSideMoney);
+    widgetSideMoney->setLayout(hboxLayoutSideMoney);
+    mainLayout->addWidget(widgetSideMoney);
+    widgetList.append(widgetSideMoney);
+
+    mainWidget->setLayout(mainLayout);
+    ui->scrollAreaSide->setWidget(mainWidget);
+}
+
+/*********************  改变事件        *********************/
+void MaterialStoInfo::resizeEvent(QResizeEvent *event)
+{
+    titleBar->resize(this->width(), titleBar->getTitleBarHeight());
+}
+
+void MaterialStoInfo::setAssistantMapList(const MapList &value)
+{
+    assistantMapList = value;
+}
+
+/*********************  设置原料        *********************/
+void MaterialStoInfo::setMatMap(const Map &value)
+{
+    matMap = value;
+}
+
+/*********************  设置控件是否可用        *********************/
+void MaterialStoInfo::setControlEnable(bool flage)
+{
+    ui->spinBoxNumber->setEnabled(flage);
+    ui->spinBoxPrice->setEnabled(flage);
+    ui->comboBoxUnit->setEnabled(flage);
+}
+
+/*********************  设置单位列表        *********************/
+void MaterialStoInfo::setUnitMapList(const MapList &value)
+{
+    unitMapList = value;
+}
+
+/*********************  单位点击        *********************/
+void MaterialStoInfo::on_comboBoxUnit_activated(const QString &arg1)
+{
+    ui->labelUnitPrice->setText(tr("单价(元/%1)").arg(arg1));
+    ui->labelNumber->setText(tr("入库数量(%1)").arg(arg1));
+
+    for(int i = 0; i < labelMainList.size(); i ++)
+    {
+
+    }
+
+    for(int i = 0; i < labelSideList.size(); i ++)
+    {
+
+    }
+}
+
+/*********************  数量改变        *********************/
+void MaterialStoInfo::on_spinBoxNumber_valueChanged(int arg1)
+{
+    QString totalMoney = QString::number(ui->spinBoxPrice->value() * arg1);
+
+    ui->lineEditTotalMoney->setText(totalMoney);
+}
+
+/*********************  单价改变        *********************/
+void MaterialStoInfo::on_spinBoxPrice_valueChanged(int arg1)
+{
+    QString totalMoney = QString::number(ui->spinBoxNumber->value() * arg1);
+
+    ui->lineEditTotalMoney->setText(totalMoney);
+}

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>purchasemanage</class>
+ <widget class="QWidget" name="purchasemanage">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>455</width>
+    <height>174</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QPushButton:hover
+{
+background-color: rgb(44, 80, 80);
+border-radius:5px;
+color:white;
+font-size:16px;
+font-weight:500
+}
+
+QPushButton:hover:pressed
+{
+background-color:darkred;
+border-radius:5px;
+color:white;
+font-size:16px;
+font-weight:500
+}
+
+QPushButton
+{
+background-color:transparent;
+color:black;
+border-radius:5px;
+spacing: 10px;
+padding: 0px 0px;
+font-size:16px;
+font-weight:500
+}
+
+
+QTreeWidget::item:selected:active
+{
+background-color: #FF92BB;
+color:black;
+font-size:11px;
+font-weight:bold;
+}
+
+QTreeWidget::item
+{
+height:60px;
+font-size:11px;
+font-weight:bold;
+}
+
+QTreeWidget::item:selected:!active
+{
+background-color:#33A1C9;
+color:black;
+}
+</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>6</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QTreeWidget" name="treeWidget">
+       <property name="minimumSize">
+        <size>
+         <width>320</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>320</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>30</width>
+         <height>30</height>
+        </size>
+       </property>
+       <column>
+        <property name="text">
+         <string>1</string>
+        </property>
+       </column>
+       <item>
+        <property name="text">
+         <string>采购订单</string>
+        </property>
+        <property name="icon">
+         <iconset resource="../res.qrc">
+          <normaloff>:/image/image/采购订单.png</normaloff>:/image/image/采购订单.png</iconset>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>采购入库</string>
+        </property>
+        <property name="icon">
+         <iconset resource="../res.qrc">
+          <normaloff>:/image/image/采购入库.png</normaloff>:/image/image/采购入库.png</iconset>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>采购退货</string>
+        </property>
+        <property name="icon">
+         <iconset resource="../res.qrc">
+          <normaloff>:/image/image/采购退货.png</normaloff>:/image/image/采购退货.png</iconset>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>安全库存采购</string>
+        </property>
+        <property name="icon">
+         <iconset resource="../res.qrc">
+          <normaloff>:/image/image/安全库存设置.png</normaloff>:/image/image/安全库存设置.png</iconset>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <widget class="QTabWidget" name="tabWidget"/>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../res.qrc"/>
+ </resources>
+ <connections/>
+</ui>

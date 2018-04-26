@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>warehousemanage</class>
+ <widget class="QWidget" name="warehousemanage">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>526</width>
+    <height>330</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>6</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QTreeWidget" name="treeWidget">
+       <property name="minimumSize">
+        <size>
+         <width>320</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>320</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QTreeWidget::item:selected:active
+{
+background-color: #FF92BB;
+color:black;
+font-size:11px;
+font-weight:bold;
+}
+
+QTreeWidget::item
+{
+height:60px;
+font-size:11px;
+font-weight:bold;
+}
+
+QTreeWidget::item:selected:!active
+{
+background-color:#33A1C9;
+color:black;
+}
+</string>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>30</width>
+         <height>30</height>
+        </size>
+       </property>
+       <column>
+        <property name="text">
+         <string>1</string>
+        </property>
+       </column>
+       <item>
+        <property name="text">
+         <string>实时库存</string>
+        </property>
+        <property name="icon">
+         <iconset resource="../res.qrc">
+          <normaloff>:/image/image/实时库存示意图.png</normaloff>:/image/image/实时库存示意图.png</iconset>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>库存调整</string>
+        </property>
+        <property name="icon">
+         <iconset resource="../res.qrc">
+          <normaloff>:/image/image/调整.png</normaloff>:/image/image/调整.png</iconset>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>库存盘点</string>
+        </property>
+        <property name="icon">
+         <iconset resource="../res.qrc">
+          <normaloff>:/image/image/盘点.png</normaloff>:/image/image/盘点.png</iconset>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>库存变更记录</string>
+        </property>
+        <property name="icon">
+         <iconset resource="../res.qrc">
+          <normaloff>:/image/image/变更.png</normaloff>:/image/image/变更.png</iconset>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>成本调价单</string>
+        </property>
+        <property name="icon">
+         <iconset resource="../res.qrc">
+          <normaloff>:/image/image/成本统计分析.png</normaloff>:/image/image/成本统计分析.png</iconset>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>库存上下限</string>
+        </property>
+        <property name="icon">
+         <iconset resource="../res.qrc">
+          <normaloff>:/image/image/价格区间.png</normaloff>:/image/image/价格区间.png</iconset>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>店内调拨</string>
+        </property>
+        <property name="icon">
+         <iconset resource="../res.qrc">
+          <normaloff>:/image/image/库存调拨.png</normaloff>:/image/image/库存调拨.png</iconset>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <widget class="QTabWidget" name="tabWidget"/>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../res.qrc"/>
+ </resources>
+ <connections/>
+</ui>

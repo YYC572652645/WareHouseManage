@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>834</width>
+    <height>393</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QTabWidget" name="tabWidgetContent"/>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QToolBar" name="toolBar">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>0</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <property name="movable">
+    <bool>false</bool>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>30</width>
+     <height>30</height>
+    </size>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonTextUnderIcon</enum>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionBaseInfo"/>
+   <addaction name="actionPurManage"/>
+   <addaction name="actionWareHouseManage"/>
+   <addaction name="separator"/>
+   <addaction name="actionMatSup"/>
+   <addaction name="actionAccount"/>
+   <addaction name="actionTodayHouseMoney"/>
+   <addaction name="actionTableCenter"/>
+   <addaction name="separator"/>
+   <addaction name="actionSwitchLanguage"/>
+   <addaction name="actionExit"/>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>834</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>信息管理</string>
+    </property>
+    <addaction name="actionBaseInfo"/>
+    <addaction name="actionPurManage"/>
+    <addaction name="actionWareHouseManage"/>
+    <addaction name="actionMatSup"/>
+    <addaction name="actionTodayHouseMoney"/>
+    <addaction name="actionTableCenter"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>关于</string>
+    </property>
+    <addaction name="actionVersion"/>
+    <addaction name="actionUpdate"/>
+   </widget>
+   <widget class="QMenu" name="menu_3">
+    <property name="title">
+     <string>权限管理</string>
+    </property>
+    <addaction name="actionAdministrator"/>
+   </widget>
+   <addaction name="menu"/>
+   <addaction name="menu_3"/>
+   <addaction name="menu_2"/>
+  </widget>
+  <action name="actionTodayHouseMoney">
+   <property name="icon">
+    <iconset resource="../res.qrc">
+     <normaloff>:/image/image/入库.png</normaloff>:/image/image/入库.png</iconset>
+   </property>
+   <property name="text">
+    <string>今日报表</string>
+   </property>
+   <property name="toolTip">
+    <string>今日报表</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>宋体</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+  </action>
+  <action name="actionTableCenter">
+   <property name="icon">
+    <iconset resource="../res.qrc">
+     <normaloff>:/image/image/报表.png</normaloff>:/image/image/报表.png</iconset>
+   </property>
+   <property name="text">
+    <string>报表中心</string>
+   </property>
+   <property name="toolTip">
+    <string>报表中心</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>宋体</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="icon">
+    <iconset resource="../res.qrc">
+     <normaloff>:/image/image/退出.png</normaloff>:/image/image/退出.png</iconset>
+   </property>
+   <property name="text">
+    <string>退出登录</string>
+   </property>
+   <property name="toolTip">
+    <string>退出登录</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>宋体</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+  </action>
+  <action name="actionBaseInfo">
+   <property name="icon">
+    <iconset resource="../res.qrc">
+     <normaloff>:/image/image/信息管理.png</normaloff>:/image/image/信息管理.png</iconset>
+   </property>
+   <property name="text">
+    <string>基础功能</string>
+   </property>
+   <property name="toolTip">
+    <string>基础功能</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>宋体</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+  </action>
+  <action name="actionPurManage">
+   <property name="icon">
+    <iconset resource="../res.qrc">
+     <normaloff>:/image/image/菜品.png</normaloff>:/image/image/菜品.png</iconset>
+   </property>
+   <property name="text">
+    <string>进货常用功能</string>
+   </property>
+   <property name="toolTip">
+    <string>进货常用功能</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>宋体</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+  </action>
+  <action name="actionWareHouseManage">
+   <property name="icon">
+    <iconset resource="../res.qrc">
+     <normaloff>:/image/image/仓库管理.png</normaloff>:/image/image/仓库管理.png</iconset>
+   </property>
+   <property name="text">
+    <string>库管常用功能</string>
+   </property>
+   <property name="toolTip">
+    <string>库管常用功能</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>宋体</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+  </action>
+  <action name="actionMatSup">
+   <property name="icon">
+    <iconset resource="../res.qrc">
+     <normaloff>:/image/image/供应商管理.png</normaloff>:/image/image/供应商管理.png</iconset>
+   </property>
+   <property name="text">
+    <string>原料供应商</string>
+   </property>
+   <property name="toolTip">
+    <string>原料供应商</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>宋体</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+  </action>
+  <action name="actionAccount">
+   <property name="icon">
+    <iconset resource="../res.qrc">
+     <normaloff>:/image/image/结算管理.png</normaloff>:/image/image/结算管理.png</iconset>
+   </property>
+   <property name="text">
+    <string>支出结算</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>宋体</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+  </action>
+  <action name="actionSwitchLanguage">
+   <property name="icon">
+    <iconset resource="../res.qrc">
+     <normaloff>:/image/image/调整.png</normaloff>:/image/image/调整.png</iconset>
+   </property>
+   <property name="text">
+    <string>切换为英文</string>
+   </property>
+   <property name="toolTip">
+    <string>切换为英文</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>宋体</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+  </action>
+  <action name="actionVersion">
+   <property name="icon">
+    <iconset resource="../res.qrc">
+     <normaloff>:/image/image/版本.png</normaloff>:/image/image/版本.png</iconset>
+   </property>
+   <property name="text">
+    <string>版本信息</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Academy Engraved LET</family>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="actionUpdate">
+   <property name="icon">
+    <iconset resource="../res.qrc">
+     <normaloff>:/image/image/版本更新.png</normaloff>:/image/image/版本更新.png</iconset>
+   </property>
+   <property name="text">
+    <string>检查更新</string>
+   </property>
+   <property name="toolTip">
+    <string>检查更新</string>
+   </property>
+  </action>
+  <action name="actionAdministrator">
+   <property name="icon">
+    <iconset resource="../res.qrc">
+     <normaloff>:/image/image/管理员.png</normaloff>:/image/image/管理员.png</iconset>
+   </property>
+   <property name="text">
+    <string>管理员管理</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="../res.qrc"/>
+ </resources>
+ <connections/>
+</ui>

@@ -1,0 +1,200 @@
+QComboBox
+{
+color:black;
+}
+
+QComboBox QAbstractItemView::item
+{
+min-height: 40px;
+min-width: 60px;
+font-size:11px;
+font-weight:bold;
+}
+
+QTreeWidget::item:selected:active
+{
+background-color:#33A1C9;
+color:white;
+font-size:11px;
+font-weight:bold;
+}
+
+QTreeWidget::item
+{
+height:50px;
+font-size:11px;
+font-weight:bold;
+}
+
+QTreeWidget::item:selected:!active
+{
+background-color:#33A1C9;
+color:white;
+}
+
+QToolBar
+{
+    background-color: white;
+}
+
+QTabBar::tab
+{
+min-width:240px;
+color: white;
+background-color:rgb(44, 62, 80);
+border: 0px solid;
+border-top-left-radius: 10px;
+border-top-right-radius: 10px;
+padding:5px;
+}
+
+QTabBar::tab:!selected
+{
+margin-top: 5px;
+}
+
+QTabBar::tab:selected
+{
+color: rgb(230,250,0);
+font-size:12px;
+font-weight:bold;
+}
+
+QStatusBar::item
+{
+border: 0px;
+}
+
+QTableWidget::item:selected:active
+{
+background-color:#33A1C9;
+color:white;
+font-size:11px;
+font-weight:bold;
+}
+
+QTableWidget::item:selected:!active
+{
+background-color:#33A1C9;
+color:white;
+font-size:11px;
+font-weight:bold;
+}
+
+QHeaderView::section
+{
+font:11pt;
+background-color: rgb(84, 115, 135);
+color:white;
+height:30px;
+}
+
+QPushButton#comboxCloseButton
+{
+background-color:transparent;
+}
+
+QPushButton:hover#comboxCloseButton
+{
+background-color:darkred;
+border-radius:5px;
+color:white;
+font-size:16px;
+font-weight:500
+}
+
+QPushButton:hover#closeButton
+{
+background-color: darkred;
+border-radius:5px;
+color:white;
+}
+
+QPushButton:hover:pressed#closeButton
+{
+background-color:darkred;
+border-radius:5px;
+color:white;
+}
+
+QPushButton#closeButton
+{
+background-color:rgb(100, 85, 80);
+color:white;
+border-radius:5px;
+height: 15px;
+max-width: 25px;
+spacing: 10px;
+padding: 0px 0px;
+}
+
+QMenu
+{
+    background-color:white;
+    border:1px solid white;
+}
+
+QMenu::item
+{
+    height:40px;
+    background-color:transparent;
+    padding:8px 32px;
+    margin:0px 8px;
+    border-bottom:1px solid #DBDBDB
+}
+
+QMenu::item:selected
+{
+    color: white;
+    background-color: #528B8B;
+}
+
+QMenu::item:checked
+{
+    background-color: darkcyan;
+    border:1px solid #C8C8C8;
+    border-radius:1px;
+    color:black;
+}
+
+QListWidget::item
+{
+height:40px;
+}
+
+*{
+outline:0px;
+}
+
+
+QCheckBox
+{
+    spacing: 5px;
+}
+
+QCheckBox::indicator
+{
+    width: 20px;
+    height: 20px;
+}
+
+QCheckBox::indicator:unchecked
+{
+    image: url(:/image/image/check-box-blank.png);
+}
+
+QCheckBox::indicator:unchecked:hover
+{
+    image: url(:/image/image/check-box-hover.png);
+}
+
+QCheckBox::indicator:checked
+{
+    image: url(:/image/image/check-box.png);
+}
+
+
+QLineEdit, QDoubleSpinBox, QSpinBox, QComboBox:!enabled
+{
+ background-color: white;
+}

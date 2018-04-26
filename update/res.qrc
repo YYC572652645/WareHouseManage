@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/image">
+        <file>image/app.png</file>
+        <file>image/background.png</file>
+        <file>image/login.png</file>
+        <file>image/messagebackground.png</file>
+        <file>image/messagecolor.png</file>
+        <file>image/login.jpg</file>
+        <file>image/loginbackground.png</file>
+    </qresource>
+    <qresource prefix="/qm">
+        <file>qm/chinese.qm</file>
+        <file>qm/english.qm</file>
+    </qresource>
+</RCC>

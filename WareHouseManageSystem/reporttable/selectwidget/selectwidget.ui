@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SelectWidget</class>
+ <widget class="QWidget" name="SelectWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>352</width>
+    <height>188</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QComboBox 
+{  
+background-color:white;
+}
+
+
+QComboBox 
+{  
+background-color:white;
+}
+QPushButton:hover
+{
+background-color: rgb(180, 85, 100);
+color:white;
+}
+
+QPushButton:hover:pressed
+{
+background-color:rgb(180, 85, 100);
+color:white;
+}
+
+QPushButton
+{
+background-color:rgb(84, 115, 135);
+color:white;
+font-size:12px;
+width: 100px;
+border-radius:2px;
+spacing:2px;
+padding: 0px 0px;
+}</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_4">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout_3">
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QWidget" name="widgetControl" native="true">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>20</height>
+          </size>
+         </property>
+         <widget class="QLineEdit" name="lineEditMaterial">
+          <property name="geometry">
+           <rect>
+            <x>978</x>
+            <y>10</y>
+            <width>120</width>
+            <height>22</height>
+           </rect>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>120</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>120</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="placeholderText">
+           <string>原料名或条形码</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="pushButtonYesterday">
+          <property name="geometry">
+           <rect>
+            <x>1101</x>
+            <y>10</y>
+            <width>30</width>
+            <height>30</height>
+           </rect>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>30</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>30</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton
+{
+background-color:transparent;
+border-image: url(:/image/image/puton.png);
+color:white;
+}</string>
+          </property>
+          <property name="text">
+           <string>昨日</string>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="pushButtonLastWeek">
+          <property name="geometry">
+           <rect>
+            <x>1167</x>
+            <y>10</y>
+            <width>30</width>
+            <height>30</height>
+           </rect>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>30</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>30</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton
+{
+background-color:transparent;
+border-image: url(:/image/image/puton.png);
+color:white;
+}</string>
+          </property>
+          <property name="text">
+           <string>上周</string>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="pushButtonThisWeek">
+          <property name="geometry">
+           <rect>
+            <x>1134</x>
+            <y>10</y>
+            <width>30</width>
+            <height>30</height>
+           </rect>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>30</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>30</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton
+{
+background-color:transparent;
+border-image: url(:/image/image/puton.png);
+color:white;
+}</string>
+          </property>
+          <property name="text">
+           <string>本周</string>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="pushButtonThisMonth">
+          <property name="geometry">
+           <rect>
+            <x>1200</x>
+            <y>10</y>
+            <width>30</width>
+            <height>30</height>
+           </rect>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>30</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>30</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton
+{
+background-color:transparent;
+border-image: url(:/image/image/puton.png);
+color:white;
+}</string>
+          </property>
+          <property name="text">
+           <string>本月</string>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="pushButtonLastMonth">
+          <property name="geometry">
+           <rect>
+            <x>1233</x>
+            <y>10</y>
+            <width>30</width>
+            <height>30</height>
+           </rect>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>30</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>30</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton
+{
+background-color:transparent;
+border-image: url(:/image/image/puton.png);
+color:white;
+}</string>
+          </property>
+          <property name="text">
+           <string>上月</string>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="pushButtonSelect">
+          <property name="geometry">
+           <rect>
+            <x>1266</x>
+            <y>10</y>
+            <width>80</width>
+            <height>30</height>
+           </rect>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>80</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+          <property name="text">
+           <string>查询报表</string>
+          </property>
+          <property name="icon">
+           <iconset>
+            <normaloff>:/image/image/查询.png</normaloff>:/image/image/查询.png</iconset>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="pushButtonExtendEmail">
+          <property name="geometry">
+           <rect>
+            <x>1349</x>
+            <y>10</y>
+            <width>80</width>
+            <height>30</height>
+           </rect>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>80</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>导出</string>
+          </property>
+          <property name="icon">
+           <iconset>
+            <normaloff>:/image/image/export.png</normaloff>:/image/image/export.png</iconset>
+          </property>
+         </widget>
+         <widget class="QLabel" name="labelSup">
+          <property name="geometry">
+           <rect>
+            <x>116</x>
+            <y>12</y>
+            <width>54</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string> 供应商：</string>
+          </property>
+         </widget>
+         <widget class="QComboBox" name="comboBoxState">
+          <property name="geometry">
+           <rect>
+            <x>52</x>
+            <y>12</y>
+            <width>60</width>
+            <height>22</height>
+           </rect>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>80</width>
+            <height>16777215</height>
+           </size>
+          </property>
+         </widget>
+         <widget class="QLabel" name="labelState">
+          <property name="geometry">
+           <rect>
+            <x>-18</x>
+            <y>12</y>
+            <width>66</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string> 单据状态：</string>
+          </property>
+         </widget>
+         <widget class="QComboBox" name="comboBoxSupplier">
+          <property name="geometry">
+           <rect>
+            <x>174</x>
+            <y>12</y>
+            <width>60</width>
+            <height>22</height>
+           </rect>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>80</width>
+            <height>16777215</height>
+           </size>
+          </property>
+         </widget>
+         <widget class="QLabel" name="labelWareHouse">
+          <property name="geometry">
+           <rect>
+            <x>238</x>
+            <y>12</y>
+            <width>66</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string> 入库仓库：</string>
+          </property>
+         </widget>
+         <widget class="QComboBox" name="comboBoxWareHouse">
+          <property name="geometry">
+           <rect>
+            <x>308</x>
+            <y>12</y>
+            <width>60</width>
+            <height>22</height>
+           </rect>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>80</width>
+            <height>16777215</height>
+           </size>
+          </property>
+         </widget>
+         <widget class="QLabel" name="labelMatType">
+          <property name="geometry">
+           <rect>
+            <x>372</x>
+            <y>12</y>
+            <width>66</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string> 原料分类：</string>
+          </property>
+         </widget>
+         <widget class="QComboBox" name="comboBoxMatType">
+          <property name="geometry">
+           <rect>
+            <x>442</x>
+            <y>12</y>
+            <width>60</width>
+            <height>22</height>
+           </rect>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>80</width>
+            <height>16777215</height>
+           </size>
+          </property>
+         </widget>
+         <widget class="QLabel" name="labelDateType">
+          <property name="geometry">
+           <rect>
+            <x>506</x>
+            <y>12</y>
+            <width>66</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string> 日期类型：</string>
+          </property>
+         </widget>
+         <widget class="QComboBox" name="comboBoxTimeType">
+          <property name="geometry">
+           <rect>
+            <x>576</x>
+            <y>12</y>
+            <width>70</width>
+            <height>22</height>
+           </rect>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>80</width>
+            <height>16777215</height>
+           </size>
+          </property>
+         </widget>
+         <widget class="QLabel" name="labelBeginTime">
+          <property name="geometry">
+           <rect>
+            <x>650</x>
+            <y>12</y>
+            <width>66</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string> 开始时间：</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="labelEndTime">
+          <property name="geometry">
+           <rect>
+            <x>814</x>
+            <y>10</y>
+            <width>66</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string> 结束时间：</string>
+          </property>
+         </widget>
+         <widget class="QDateEdit" name="dateEditEndTime">
+          <property name="geometry">
+           <rect>
+            <x>884</x>
+            <y>12</y>
+            <width>90</width>
+            <height>22</height>
+           </rect>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+         </widget>
+         <widget class="QDateEdit" name="dateEditStartTime">
+          <property name="geometry">
+           <rect>
+            <x>720</x>
+            <y>12</y>
+            <width>90</width>
+            <height>22</height>
+           </rect>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+         </widget>
+        </widget>
+       </item>
+       <item>
+        <widget class="QTableWidget" name="tableWidget"/>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

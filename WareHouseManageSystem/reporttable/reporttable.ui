@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>reporttable</class>
+ <widget class="QWidget" name="reporttable">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>451</width>
+    <height>318</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+QPushButton:hover
+{
+background-color: rgb(180, 85, 100);
+color:white;
+}
+
+QPushButton:hover:pressed
+{
+background-color:rgb(180, 85, 100);
+color:white;
+}
+
+QPushButton
+{
+background-color:rgb(84, 115, 135);
+color:white;
+border-radius:2px;
+spacing:2px;
+padding: 0px 0px;
+}
+</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QSplitter" name="splitter">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <widget class="QTreeWidget" name="treeWidget">
+      <property name="minimumSize">
+       <size>
+        <width>320</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>450</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QTreeWidget::item:selected:active
+{
+background-color: #FF92BB;
+color:black;
+}
+
+QTreeWidget::item
+{
+height:60px;
+}
+
+QTreeWidget::item:selected:!active
+{
+background-color:#33A1C9;
+color:black;
+}
+</string>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>30</width>
+        <height>30</height>
+       </size>
+      </property>
+      <column>
+       <property name="text">
+        <string>1</string>
+       </property>
+      </column>
+      <item>
+       <property name="text">
+        <string>采购报表</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>采购入库明细报表</string>
+        </property>
+        <property name="icon">
+         <iconset resource="../res.qrc">
+          <normaloff>:/image/image/采购报表.png</normaloff>:/image/image/采购报表.png</iconset>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>采购入库汇总报表</string>
+        </property>
+        <property name="icon">
+         <iconset resource="../res.qrc">
+          <normaloff>:/image/image/采购报表.png</normaloff>:/image/image/采购报表.png</iconset>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>采购退货明细报表</string>
+        </property>
+        <property name="icon">
+         <iconset resource="../res.qrc">
+          <normaloff>:/image/image/采购报表.png</normaloff>:/image/image/采购报表.png</iconset>
+        </property>
+       </item>
+      </item>
+      <item>
+       <property name="text">
+        <string>库存报表</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>调整单明细报表</string>
+        </property>
+        <property name="icon">
+         <iconset resource="../res.qrc">
+          <normaloff>:/image/image/库存报表.png</normaloff>:/image/image/库存报表.png</iconset>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>盘存单明细报表</string>
+        </property>
+        <property name="icon">
+         <iconset resource="../res.qrc">
+          <normaloff>:/image/image/库存报表.png</normaloff>:/image/image/库存报表.png</iconset>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>盘存单汇总报表</string>
+        </property>
+        <property name="icon">
+         <iconset resource="../res.qrc">
+          <normaloff>:/image/image/库存报表.png</normaloff>:/image/image/库存报表.png</iconset>
+        </property>
+       </item>
+      </item>
+      <item>
+       <property name="text">
+        <string>供应商报表</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>供应商供货明细报表</string>
+        </property>
+        <property name="icon">
+         <iconset resource="../res.qrc">
+          <normaloff>:/image/image/供应商报表.png</normaloff>:/image/image/供应商报表.png</iconset>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>供应商供货汇总报表</string>
+        </property>
+        <property name="icon">
+         <iconset resource="../res.qrc">
+          <normaloff>:/image/image/供应商报表.png</normaloff>:/image/image/供应商报表.png</iconset>
+        </property>
+       </item>
+      </item>
+      <item>
+       <property name="text">
+        <string>销售报表</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>原料销售报表</string>
+        </property>
+        <property name="icon">
+         <iconset resource="../res.qrc">
+          <normaloff>:/image/image/原料圈.png</normaloff>:/image/image/原料圈.png</iconset>
+        </property>
+       </item>
+      </item>
+     </widget>
+     <widget class="QTabWidget" name="tabWidgetData">
+      <property name="styleSheet">
+       <string notr="true">QTabBar::tab
+{
+min-width:300px;
+color: white;
+background-color:rgb(44, 62, 80);
+border: 0px solid;
+border-top-left-radius: 10px;
+border-top-right-radius: 10px;
+padding:5px;
+}
+
+QTabBar::tab:!selected
+{
+margin-top: 5px;
+}
+
+QTabBar::tab:selected
+{
+color: rgb(230,250,0);
+font-size:12px;
+font-weight:bold;
+}</string>
+      </property>
+      <property name="currentIndex">
+       <number>-1</number>
+      </property>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../res.qrc"/>
+ </resources>
+ <connections/>
+</ui>
